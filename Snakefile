@@ -30,6 +30,6 @@ rule star_map:
 		--twopassMode Basic
 		--twopass1readsN -1
 		--outFileNamePrefix {output}""",
-		input_fastq1={input.fastq1},
-		input_fastq2={input.fastq2},
+		input_fastq1="{input.fastq1}"",
+		input_fastq2="{input.fastq2}"",
 		star_genome_dir=config["star_genome_dir"])

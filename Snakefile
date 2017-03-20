@@ -8,7 +8,7 @@ rule star_map:
 	input:
 		fastq1=config["fastq1"],
 		fastq2=config["fastq2"],
-		star_genome_dir=config["star_genome_dir"]
+		star_genome_dir=config["star_genome_dir"],
 		sample_id=config["sample_id"]
 
 	output:

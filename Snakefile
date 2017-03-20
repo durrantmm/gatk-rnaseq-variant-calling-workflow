@@ -9,25 +9,25 @@ rule star_map:
 		"star_align/"
 
 	shell:
-		expand("STAR "
-		"--readFilesIn {input.fastq1} {input.fastq2} "
-		"--genomeDir  {star_genome_dir}"
-		"--readFilesCommand zcat "
-		"--runThreadN 6 "
-		"--genomeLoad NoSharedMemory "
-		"--outFilterMultimapNmax 20 "
-		"--alignSJoverhangMin 8 "
-		"--alignSJDBoverhangMin 1 "
-		"--outFilterMismatchNmax 999 "
-		"--outFilterMismatchNoverReadLmax 0.04 "
-		"--alignIntronMin 20 "
-		"--alignIntronMax 1000000 "
-		"--alignMatesGapMax 1000000 "
-		"--outSAMunmapped Within "
-		"--outFilterType BySJout "
-		"--outSAMattributes NH HI AS NM MD "
-		"--sjdbScore 1 "
-		"--twopassMode Basic "
-		"--twopass1readsN -1 "
-		"--outFileNamePrefix {output}",
+		expand("""STAR
+		--readFilesIn {input.fastq1} {input.fastq2}
+		--genomeDir  {star_genome_dir}
+		--readFilesCommand zcat
+		--runThreadN 6
+		--genomeLoad NoSharedMemory
+		--outFilterMultimapNmax 20
+		--alignSJoverhangMin 8
+		--alignSJDBoverhangMin 1
+		--outFilterMismatchNmax 999
+		--outFilterMismatchNoverReadLmax 0.04
+		--alignIntronMin 20
+		--alignIntronMax 1000000
+		--alignMatesGapMax 1000000
+		--outSAMunmapped Within
+		--outFilterType BySJout
+		--outSAMattributes NH HI AS NM MD
+		--sjdbScore 1
+		--twopassMode Basic
+		--twopass1readsN -1
+		--outFileNamePrefix {output}""",
 		config["star_genome_dir"])

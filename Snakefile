@@ -13,8 +13,8 @@ rule star_map:
 		"star_align/star_align"
 
 	shell:
-		expand("""STAR
-		--readFilesIn {input_fastq1} {input_fastq2}
+		"""STAR
+		--readFilesIn {input.fastq1} {input.fastq2}
 		--genomeDir  {star_genome_dir}
 		--readFilesCommand zcat
 		--runThreadN 6
@@ -33,9 +33,4 @@ rule star_map:
 		--sjdbScore 1
 		--twopassMode Basic
 		--twopass1readsN -1
-		--outFileNamePrefix {output}""",
-
-		input_fastq1="{input.fastq1}",
-		input_fastq2="{input.fastq2}",
-		output="{output}",
-		star_genome_dir=config["star_genome_dir"])
+		--outFileNamePrefix {output}"""

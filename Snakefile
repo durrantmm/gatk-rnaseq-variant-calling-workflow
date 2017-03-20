@@ -1,12 +1,16 @@
 configfile: "config.yaml"
 
+rule all:
+	output:
+		"star_align/star_align"
+
 rule star_map:
 	input:
 		fastq1=config["fastq1"],
 		fastq2=config["fastq2"]
 
 	output:
-		"star_align"
+		"star_align/star_align"
 
 	shell:
 		expand("""STAR

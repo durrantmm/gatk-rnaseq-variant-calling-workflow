@@ -2,7 +2,7 @@ configfile: "config.yaml"
 
 rule star_map:
 	input:
-		fastq1=config["fastq1"]
+		fastq1=config["fastq1"],
 		fastq2=config["fastq2"]
 
 	output:

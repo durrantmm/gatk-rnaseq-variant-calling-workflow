@@ -30,4 +30,4 @@ rule star_map:
 		--twopassMode Basic
 		--twopass1readsN -1
 		--outFileNamePrefix {output}""",
-		config["star_genome_dir"])
+		star_genome_dir=config["star_genome_dir"])

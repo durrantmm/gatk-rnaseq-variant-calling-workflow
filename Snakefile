@@ -9,9 +9,9 @@ rule star_map:
 		"star_align/"
 
 	shell:
-		"STAR "
+		expand("STAR "
 		"--readFilesIn {input.fastq1} {input.fastq2} "
-		"--genomeDir  config["star_genome_dir"] "
+		"--genomeDir  {star_genome_dir}"
 		"--readFilesCommand zcat "
 		"--runThreadN 6 "
 		"--genomeLoad NoSharedMemory "
@@ -29,4 +29,5 @@ rule star_map:
 		"--sjdbScore 1 "
 		"--twopassMode Basic "
 		"--twopass1readsN -1 "
-		"--outFileNamePrefix {output}"
+		"--outFileNamePrefix {output}",
+		config["star_genome_dir"])

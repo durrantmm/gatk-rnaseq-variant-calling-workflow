@@ -2,7 +2,7 @@ configfile: "config.yaml"
 
 rule all:
 	input:
-		"star_align/star_align"
+		"star_align/star_align.out"
 
 rule star_map:
 	input:
@@ -10,7 +10,7 @@ rule star_map:
 		fastq2=config["fastq2"]
 
 	output:
-		"star_align/star_align"
+		"star_align/star_align.out"
 
 	shell:
 		"STAR "

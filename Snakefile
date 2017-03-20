@@ -8,7 +8,7 @@ rule all:
 
 rule star_map:
 	input:
-		fastq1=expand"{sample}.1.fq.gz",
+		fastq1="{sample}.1.fq.gz",
 		fastq2="{sample}.2.fq.gz",
 		star_genome_dir=config["star_genome_dir"]
 

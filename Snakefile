@@ -1,6 +1,5 @@
 configfile: "config.yaml"
 
-INPUT_DIR =
 SAMPLES = ["Pipeline-RNAseqVariantCaller"]
 
 rule all:

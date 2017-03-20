@@ -1,5 +1,7 @@
 configfile: "config.yaml"
 
+sample_id = config["sample_id"]
+
 rule all:
 	input:
 		"star_align/star_align"
@@ -9,13 +11,13 @@ rule star_map:
 		fastq1=config["fastq1"],
 		fastq2=config["fastq2"],
 		star_genome_dir=config["star_genome_dir"],
-		sample_id=config["sample_id"]
 
 	output:
 		"star_align/{input.sample_id}Aligned.out.sam"
 
 	shell:
-		"STAR "
+
+		expand("STAR "
 		"--readFilesIn {input.fastq1} {input.fastq2} "
 		"--genomeDir  {input.star_genome_dir} "
 		"--readFilesCommand zcat "
@@ -35,3 +37,4 @@ rule star_map:
 		"--sjdbScore 1 "
 		"--twopassMode Basic "
 		"--twopass1readsN -1 "
+		"--outFileNamePrefix {sample}", sample=sample_id)

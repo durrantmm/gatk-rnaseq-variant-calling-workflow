@@ -6,7 +6,7 @@ rule star_map:
 		fastq2="example_input/Pipeline-RNAseqVariantCaller.1.fq.gz example_input/Pipeline-RNAseqVariantCaller.2.fq.gz"
 
 	output:
-		"star_align/"
+		"star_align"
 
 	shell:
 		expand("""STAR

@@ -32,4 +32,5 @@ rule star_map:
 		--outFileNamePrefix {output}""",
 		input_fastq1="{input.fastq1}",
 		input_fastq2="{input.fastq2}",
+		output="{output}",
 		star_genome_dir=config["star_genome_dir"])

@@ -12,7 +12,7 @@ rule star_map:
 	input:
 		fastq1 = join(config["input_dir"], "{sample}.1.fq.gz)"),
 		fastq2 = join(config["input_dir"], "{sample}.2.fq.gz)"),
-		star_genome_dir=config["star_genome_dir"]
+		star_genome_dir = config["star_genome_dir"]
 
 	output:
 		"star_align/{sample}.Aligned.out.sam"

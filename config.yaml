@@ -3,3 +3,7 @@ gatk_path: /srv/gs1/software/gatk/gatk-3.6/GenomeAnalysisTK.jar
 
 reference_genome: /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/hg19.fa
 star_genome_dir: /srv/gsfs0/projects/bhatt/mdurrant/BUTYRATE_brayon/references/starGenomeUCSChg19
+
+
+fastq1: /home/mdurrant/montgomery/mdurrant/ASETools/example_input/Pipeline-RNAseqVariantCaller.1.fq.gz
+fastq2: /home/mdurrant/montgomery/mdurrant/ASETools/example_input/Pipeline-RNAseqVariantCaller.2.fq.gz

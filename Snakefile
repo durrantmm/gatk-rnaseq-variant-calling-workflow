@@ -2,8 +2,8 @@ configfile: "config.yaml"
 
 rule star_map:
 	input:
-		fastq1="example_input/Pipeline-RNAseqVariantCaller.1.fq.gz example_input/Pipeline-RNAseqVariantCaller.1.fq.gz",
-		fastq2="example_input/Pipeline-RNAseqVariantCaller.1.fq.gz example_input/Pipeline-RNAseqVariantCaller.2.fq.gz"
+		fastq1=config["fastq1"]
+		fastq2=config["fastq2"]
 
 	output:
 		"star_align"
@@ -30,6 +30,7 @@ rule star_map:
 		--twopassMode Basic
 		--twopass1readsN -1
 		--outFileNamePrefix {output}""",
+
 		input_fastq1="{input.fastq1}",
 		input_fastq2="{input.fastq2}",
 		output="{output}",

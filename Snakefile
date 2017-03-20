@@ -1,14 +1,15 @@
 configfile: "config.yaml"
 
+INPUT_DIR =
 SAMPLES = ["Pipeline-RNAseqVariantCaller"]
 
 rule all:
 	input:
-		expand("star_align/{sample}.Aligned.out.sam", sample=SAMPLES)
+		expand("{input_dir}/{sample}.Aligned.out.sam", input_dir=config["input_dir"], sample=SAMPLES)
 
 rule star_map:
 	input:
-		fastq1="{sample}.1.fq.gz",
+		fastq1=expand"{sample}.1.fq.gz",
 		fastq2="{sample}.2.fq.gz",
 		star_genome_dir=config["star_genome_dir"]
 

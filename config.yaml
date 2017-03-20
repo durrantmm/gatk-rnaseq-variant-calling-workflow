@@ -1,0 +1,5 @@
+picard_path: /srv/gs1/software/picard-tools/2.8.0/picard.jar
+gatk_path: /srv/gs1/software/gatk/gatk-3.6/GenomeAnalysisTK.jar
+
+reference_genome: /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/hg19.fa
+star_genome_dir: /srv/gsfs0/projects/bhatt/mdurrant/BUTYRATE_brayon/references/starGenomeUCSChg19

@@ -1,10 +1,9 @@
 configfile: "config.yaml"
 
-
 rule star_map:
 
   input:
-    fastq1="example_input/Pipeline-RNAseqVariantCaller.1.fq.gz example_input/Pipeline-RNAseqVariantCaller.1.fq.gz"
+    fastq1="example_input/Pipeline-RNAseqVariantCaller.1.fq.gz example_input/Pipeline-RNAseqVariantCaller.1.fq.gz",
     fastq2="example_input/Pipeline-RNAseqVariantCaller.1.fq.gz example_input/Pipeline-RNAseqVariantCaller.2.fq.gz"
 
   output:

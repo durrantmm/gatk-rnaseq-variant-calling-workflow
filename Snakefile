@@ -9,9 +9,10 @@ rule star_map:
 		fastq1=config["fastq1"],
 		fastq2=config["fastq2"],
 		star_genome_dir=config["star_genome_dir"]
+		sample_id=config["sample_id"]
 
 	output:
-		"star_align/star_align"
+		"star_align/{input.sample_id}Aligned.out.sam"
 
 	shell:
 		"STAR "

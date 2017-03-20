@@ -1,7 +1,7 @@
 configfile: "config.yaml"
 
 rule all:
-	output:
+	input:
 		"star_align/star_align"
 
 rule star_map:

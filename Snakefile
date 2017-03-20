@@ -1,15 +1,17 @@
+from os.path import join
+
 configfile: "config.yaml"
 
 SAMPLES = ["Pipeline-RNAseqVariantCaller"]
 
 rule all:
 	input:
-		print(expand("star_align/{sample}.Aligned.out.sam", sample=SAMPLES))
+		expand("star_align/{sample}.Aligned.out.sam", sample=SAMPLES)
 
 rule star_map:
 	input:
-		fastq1=expand("{input_dir}/{sample}.1.fq.gz", input_dir=config["input_dir"]),
-		fastq2=expand("{input_dir}/{sample}.2.fq.gz", input_dir=config["input_dir"]),
+		fastq1 = join(config["input_dir"], "{sample}.1.fq.gz)"),
+		fastq2 = join(config["input_dir"], "{sample}.1.fq.gz)"),
 		star_genome_dir=config["star_genome_dir"]
 
 	output:

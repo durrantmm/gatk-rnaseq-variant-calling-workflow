@@ -1,10 +1,5 @@
 configfile: "config.yaml"
 
-rule all:
-
-  input:
-
-    expand("{sample}.{yourparam}.output.pdf", sample=config["samples"], param=config["yourparam"])
 
 rule star_map:
 

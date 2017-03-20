@@ -15,7 +15,7 @@ rule star_map:
 
 	shell:
 		"STAR "
-		"--readFilesIn {input.fastq1} {input_fastq2} "
+		"--readFilesIn {input.fastq1} {input.fastq2} "
 		"--genomeDir  {star_genome_dir} "
 		"--readFilesCommand zcat "
 		"--runThreadN 6 "

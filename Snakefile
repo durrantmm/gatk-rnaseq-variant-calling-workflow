@@ -15,7 +15,7 @@ rule star_map:
 	shell:
 		"STAR "
 		"--readFilesIn {input.fastq1} {input.fastq2} "
-		"--genomeDir  {star_genome_dir} "
+		"--genomeDir /srv/gsfs0/projects/bhatt/mdurrant/BUTYRATE_brayon/references/starGenomeUCSChg19 "
 		"--readFilesCommand zcat "
 		"--runThreadN 6 "
 		"--genomeLoad NoSharedMemory "

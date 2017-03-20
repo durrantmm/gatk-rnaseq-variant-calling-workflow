@@ -34,4 +34,3 @@ rule star_map:
 		"--sjdbScore 1 "
 		"--twopassMode Basic "
 		"--twopass1readsN -1 "
-		"--outFileNamePrefix {output}"

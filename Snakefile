@@ -1,6 +1,6 @@
 configfile: "config.yaml"
 
-sample_id = config["sample_id"]
+SAMPLES = ["Pipeline-RNAseqVariantCaller"]
 
 rule all:
 	input:
@@ -8,16 +8,15 @@ rule all:
 
 rule star_map:
 	input:
-		fastq1=config["fastq1"],
-		fastq2=config["fastq2"],
+		fastq1=expand("{sample}.1.fq.gz", sample=SAMPLES)
+		fastq2=expand(["{sample}.2.fq.gz", sample=SAMPLES)
 		star_genome_dir=config["star_genome_dir"],
 
 	output:
-		"star_align/{input.sample_id}Aligned.out.sam"
+		"star_align/{sample}.Aligned.out.sam"
 
 	shell:
-
-		expand("STAR "
+		"STAR "
 		"--readFilesIn {input.fastq1} {input.fastq2} "
 		"--genomeDir  {input.star_genome_dir} "
 		"--readFilesCommand zcat "
@@ -37,4 +36,4 @@ rule star_map:
 		"--sjdbScore 1 "
 		"--twopassMode Basic "
 		"--twopass1readsN -1 "
-		"--outFileNamePrefix {sample}", sample=sample_id)
+		"--outFileNamePrefix "star_align/{wildcards.sample}"

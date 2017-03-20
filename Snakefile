@@ -36,4 +36,4 @@ rule star_map:
 		"--sjdbScore 1 "
 		"--twopassMode Basic "
 		"--twopass1readsN -1 "
-		"--outFileNamePrefix "star_align/{wildcards.sample}"
+		"--outFileNamePrefix star_align/{wildcards.sample}"

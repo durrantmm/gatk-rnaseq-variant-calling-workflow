@@ -10,7 +10,7 @@ rule star_map:
 	input:
 		fastq1=expand("{sample}.1.fq.gz", sample=SAMPLES),
 		fastq2=expand(["{sample}.2.fq.gz", sample=SAMPLES),
-		star_genome_dir=config["star_genome_dir"],
+		star_genome_dir=config["star_genome_dir"]
 
 	output:
 		"star_align/{sample}.Aligned.out.sam"

@@ -34,14 +34,3 @@ rule star_map:
 		"--twopassMode Basic "
 		"--twopass1readsN -1 "
 		"--outFileNamePrefix {output}"
-
-rule bcftools_call:
-    input:
-        fa="data/genome.fa",
-        bam=expand("sorted_reads/{sample}.bam", sample=SAMPLES),
-        bai=expand("sorted_reads/{sample}.bam.bai", sample=SAMPLES)
-    output:
-        "calls/all.vcf"
-    shell:
-        "samtools mpileup -g -f {input.fa} {input.bam} | "
-        "bcftools call -mv - > {output}"

@@ -2,10 +2,8 @@ rule star_map:
 	input:
 		fastq1="/home/mdurrant/montgomery/mdurrant/ASETools/example_input/Pipeline-RNAseqVariantCaller.1.fq.gz",
 		fastq2="/home/mdurrant/montgomery/mdurrant/ASETools/example_input/Pipeline-RNAseqVariantCaller.2.fq.gz"
-
 	output:
 		"star_align/star_align.out"
-
 	shell:
 		"STAR "
 		"--readFilesIn {input.fastq1} {input.fastq2} "

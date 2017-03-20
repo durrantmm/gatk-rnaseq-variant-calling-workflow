@@ -4,12 +4,12 @@ SAMPLES = ["Pipeline-RNAseqVariantCaller"]
 
 rule all:
 	input:
-		expand("star_align/{sample}.Aligned.out.sam", input_dir=config["input_dir"], sample=SAMPLES)
+		expand("star_align/{sample}.Aligned.out.sam", sample=SAMPLES)
 
 rule star_map:
 	input:
-		fastq1="{sample}.1.fq.gz",
-		fastq2="{sample}.2.fq.gz",
+		fastq1=expand("{input_dir}/{sample}.1.fq.gz", input_dir=config["input_dir"])
+		fastq2=expand("{input_dir}/{sample}.2.fq.gz", input_dir=config["input_dir"])
 		star_genome_dir=config["star_genome_dir"]
 
 	output:
